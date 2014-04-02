@@ -13,6 +13,9 @@
 	</div>
 </form>
 {{else}}
+{{#if isSuccess}}
+<div class="alert alert-success">Successfully updated {{this.name}}</div>
+{{/if}}
 <button {{action "edit"}} class="btn btn-warning">Edit</button>
 <h2>{{name}} ({{year}})</h2>
 <div>{{description}}</div>

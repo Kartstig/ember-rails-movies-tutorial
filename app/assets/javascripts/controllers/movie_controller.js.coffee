@@ -5,8 +5,11 @@ EmberApp.MovieController = Ember.ObjectController.extend
     # as 'actions'.
     edit: ->
       @set('isEditing', true)
+      @set('isSuccess', false)
     save: ->
     	@get('content').save()
     	@set('isEditing', false)
+    	@set('isSuccess', true)
     cancel: ->
     	@set('isEditing', false)
+    	@set('isSuccess', false)
