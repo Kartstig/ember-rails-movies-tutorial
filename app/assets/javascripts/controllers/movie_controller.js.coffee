@@ -4,4 +4,9 @@ EmberApp.MovieController = Ember.ObjectController.extend
     # properties or Observers in this section, but on the same indent level
     # as 'actions'.
     edit: ->
-      alert "Edit button is hooked up to the controller but needs implementing!"
+      @set('isEditing', true)
+    save: ->
+    	@get('content').save()
+    	@set('isEditing', false)
+    cancel: ->
+    	@set('isEditing', false)

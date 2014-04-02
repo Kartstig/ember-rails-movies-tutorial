@@ -1,4 +1,20 @@
-<button {{action "edit"}} class="btn btn-primary">Edit</button>
+
+{{#if isEditing}}
+<button {{action "save"}} class="btn btn-success">Save</button>
+<button {{action "cancel"}} class="btn btn-danger">Cancel</button>
+<form role="form">
+	<div class="form-group">
+		<label for="name">Name</label>
+		{{input class="form-control" id="name" value=name }}
+		<label for="year">Year</label>
+		{{input class="form-control" id="year" value=year }}
+		<label for="description">Description</label>
+		{{textarea class="form-control" id="description" rows="7" value=description }}
+	</div>
+</form>
+{{else}}
+<button {{action "edit"}} class="btn btn-warning">Edit</button>
 <h2>{{name}} ({{year}})</h2>
 <div>{{description}}</div>
+{{/if}}
 {{outlet}}
