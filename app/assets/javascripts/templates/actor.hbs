@@ -2,9 +2,16 @@
 <h2>{{name}}</h2>
 <div>{{bio}}</div>
 <div>DOB: {{born}}</div>
-<h3>Appearances:</h3>
-<ul>
-{{#each movie in appearances}}
-<li>{{link-to movie.name "movie" movie}}</li>
-{{/each}}
-</ul>
+<div class="row">
+	<div class="col-sm-2">
+		<h3>Appearances:</h3>
+		<ul>
+			{{#each movie in appearances}}
+			<li>{{link-to movie.name "appearances.show" movie}}</li>
+			{{/each}}
+		</ul>
+	</div>
+	<div class="col-sm-10">
+		{{ outlet }}
+	</div>
+</div>
